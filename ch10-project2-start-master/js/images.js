@@ -14,3 +14,35 @@ function displayImage()
      webimage.appendChild(images[i]); 
     }
 };
+
+// Mansi:- added the handlers for Mouse enter, Mouse leave and Mouse move events of the square images
+var m=0;
+$(div.squareimg).mouseenter(function()
+{
+  $("img", this).first().images[i];
+});
+
+$(div.squareimg).mouseleave(function()
+{
+  $("img", this).first().images[i];
+  $("img", this).last().images[i](++m);
+});
+
+var pageX=0;
+var pageY=0;
+ 
+for(pageX; pageX<= images.length-1; pageX++)
+{
+  images[i];
+}
+
+for(pageY; pageY<=images.length-1; pageY--)
+{
+  images[i];
+}
+
+$(div.squareimg).ready(function(){
+  $(div.squareimg).mousemove(function(event){
+   $("img",this).images(event.images[i].pageX + event.images[i].pageY);
+  });
+});
