@@ -18,6 +18,7 @@ var webimage = document.getElementsByClassName("gallery");
 $(".gallery img").mouseenter(function(event){
   $(this).addClass('gray');
   $(this).animate({height:500, width:450});
+  $('body').append("<div class='Preview'></div>");   // Mansi: Added the div element with class Preview
   
   var src=$(this).attr("src");
   var alt=$(this).attr("alt");
