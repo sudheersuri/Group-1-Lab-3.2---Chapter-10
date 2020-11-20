@@ -4,45 +4,33 @@ var images = JSON.parse(jsonImages);
 
 // Mansi :- added a loop through the images array using jQuery DOM methods
 
-function displayImage()
-{
-    var webimage = document.getElementsByName("jsonImages");
+var webimage = document.getElementsByClassName("gallery");
     for(i=0;i<= images.length-1; i++) 
     {
-      images[i];
     
-     webimage.appendChild(images[i]); 
+     webimage[0].innerHTML += `<img src="./images/square/${images[i].path}"/>`;
+     $(".gallery").append(webimage);
+      i++;
     }
-};
 
 // Mansi:- added the handlers for Mouse enter, Mouse leave and Mouse move events of the square images
-var m=0;
-$(div.squareimg).mouseenter(function()
-{
-  $("img", this).first().images[i];
-});
 
-$(div.squareimg).mouseleave(function()
-{
-  $("img", this).first().images[i];
-  $("img", this).last().images[i](++m);
-});
+$(".gallery img").mouseenter(function(event){
+  $(this).addClass('gray');
+  $(this).animate({height:500, width:450});
+  
+  var src=$(this).attr("src");
+  var alt=$(this).attr("alt");
+  src = src.replace("square","medium");
+})
 
-var pageX=0;
-var pageY=0;
- 
-for(pageX; pageX<= images.length-1; pageX++)
-{
-  images[i];
-}
+$(".gallery img").mouseleave(function(event){
+  $(this).removeClass('gray');
+  $(this).animate({height:200, width:200});
+})
 
-for(pageY; pageY<=images.length-1; pageY--)
-{
-  images[i];
-}
+$(".gallery img").mousemove(function(event){
+  $(this).animate({"left": "90%" ,
+  "right": "90%"});
 
-$(div.squareimg).ready(function(){
-  $(div.squareimg).mousemove(function(event){
-   $("img",this).images(event.images[i].pageX + event.images[i].pageY);
-  });
 });
